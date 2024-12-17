@@ -32,14 +32,21 @@ def copy_files_to_new_folders(src_dirs, dest_base_dir):
                 shutil.copy(src_file, dest_file)
 
 
+def get_all_subdirectories(nums):
+    base_path = r'TT3D-dataset'
+    all_subdirs = []
+    for num in nums:
+        dataset_dir = os.path.join(base_path, f'dataset{num}')
+        if os.path.exists(dataset_dir):
+            subdirs = get_subdirectories(dataset_dir)
+            all_subdirs.extend(subdirs)
+    return all_subdirs
+
+
 def main():
     dataset_dir = r'dataset'
     clear_directory(dataset_dir, 'imagenet-simple-labels.json')
-    gmfool_dir = r'TT3D-dataset\dataset1'
-    train_data_dir = r'TT3D-dataset\dataset2'
-    gmfool_subdirs = get_subdirectories(gmfool_dir)
-    train_data_subdirs = get_subdirectories(train_data_dir)
-    all_subdirs = gmfool_subdirs + train_data_subdirs
+    all_subdirs = get_all_subdirectories([1, 2, 5])
     selected_subdirs = random.sample(all_subdirs, 100)
     copy_files_to_new_folders(selected_subdirs, dataset_dir)
 
