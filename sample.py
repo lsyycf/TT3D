@@ -35,8 +35,8 @@ def copy_files_to_new_folders(src_dirs, dest_base_dir):
 def main():
     dataset_dir = r'dataset'
     clear_directory(dataset_dir, 'imagenet-simple-labels.json')
-    gmfool_dir = r'TT3D-dataset\GMFool_dataset'
-    train_data_dir = r'TT3D-dataset\train_data_all'
+    gmfool_dir = r'TT3D-dataset\dataset1'
+    train_data_dir = r'TT3D-dataset\dataset2'
     gmfool_subdirs = get_subdirectories(gmfool_dir)
     train_data_subdirs = get_subdirectories(train_data_dir)
     all_subdirs = gmfool_subdirs + train_data_subdirs
