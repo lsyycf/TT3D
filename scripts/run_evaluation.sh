@@ -21,7 +21,7 @@ mkdir -p logs/evaluation
 
 # Start the evaluation process
 echo "Starting evaluation for $OBJECT_NAME..."
-python evaluation.py \
+python3 evaluation.py \
     "$METADATA_PATH" \
     --workspace "$WORKSPACE_PATH" \
     --evaluation_model resnet \

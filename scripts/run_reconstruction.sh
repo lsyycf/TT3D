@@ -21,7 +21,7 @@ mkdir -p logs/reconstruction
 
 # 3D Object Reconstruction Phase 1
 echo "Starting 3D object reconstruction phase 1 for $OBJECT_NAME..."
-python reconstruction.py \
+python3 reconstruction.py \
     $METADATA_PATH \
     --workspace $WORKSPACE_PATH \
     -O \

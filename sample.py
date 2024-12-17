@@ -33,18 +33,20 @@ def copy_files_to_new_folders(src_dirs, dest_base_dir):
 
 
 def get_all_subdirectories(nums):
-    base_path = r'TT3D-dataset'
+    base_path = r'/mnt/data/lhl/TT3D-dataset'
     all_subdirs = []
     for num in nums:
         dataset_dir = os.path.join(base_path, f'dataset{num}')
         if os.path.exists(dataset_dir):
             subdirs = get_subdirectories(dataset_dir)
             all_subdirs.extend(subdirs)
+        else:
+            print(f'Dataset directory {dataset_dir} does not exist.')
     return all_subdirs
 
 
 def main():
-    dataset_dir = r'dataset'
+    dataset_dir = r'/mnt/data2/lhl/dataset'
     clear_directory(dataset_dir, 'imagenet-simple-labels.json')
     all_subdirs = get_all_subdirectories([1, 2, 5])
     selected_subdirs = random.sample(all_subdirs, 100)

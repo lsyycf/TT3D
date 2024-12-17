@@ -21,7 +21,7 @@ mkdir -p logs/adv_optimization
 
 # 3D Adversarial Optimization
 echo "Starting 3D adversarial optimization for $OBJECT_NAME..."
-python generate_3d_adv.py \
+python3 generate_3d_adv.py \
     $METADATA_PATH/ \
     --workspace $WORKSPACE_PATH \
     --target_label random \
